@@ -1,0 +1,83 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content padding class="myview">
+
+  <form [formGroup]="todo" (ngSubmit)="loginForm()">
+
+    <ion-list style="background-color: transparent;">
+      <ion-item class="item-invisible" no-lines>
+        <p class="titulo">Bienvenido!</p>
+        <p class="titulo">Asistentes</p>
+      </ion-item>
+
+      <!-- <ion-item class="item-invisible" no-lines>
+        <button ion-button icon-left block round>
+          <ion-icon name="logo-facebook" left></ion-icon>
+          Facebook
+        </button>
+      </ion-item> -->
+
+
+
+      <!-- <ion-item class="item-invisible" no-lines>
+        <ion-row>
+          <ion-col>
+            <hr>
+          </ion-col>
+          <ion-col style="text-align: center;">
+            <p>O</p>
+          </ion-col>
+
+          <ion-col>
+            <hr>
+          </ion-col>
+        </ion-row>
+      </ion-item> -->
+
+      <ion-item class="item-invisible" no-lines>
+        <button color="danger" ion-button icon-left block round (click)="scanEventCode()">
+
+          Escanear evento
+        </button>
+      </ion-item>
+      <ion-item class="item-invisible">
+        <p style="font-size: 130%; text-align: center;" color="white">Código de evento escaneado: </p>
+        <p style="font-size: 130%; text-align: center;" color="white" *ngIf="evento">{{ evento }}</p>
+        <p style="font-size: 130%; text-align: center;" color="white" *ngIf="!evento">Código sin escanear</p>
+
+      </ion-item>
+      <ion-item class="item-invisible">
+
+        <ion-label stacked style="font-size: 130%; text-align: center;" color="white">Correo Electrónico</ion-label>
+
+        <ion-input type="email" formControlName="email" style="color: white; font-size: 130%"></ion-input>
+      </ion-item>
+
+      <ion-item class="item-invisible">
+        <ion-label stacked color="white" style="font-size: 130%; text-align: center">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" style="color: white; font-size: 130%"></ion-input>
+        <br>
+      </ion-item>
+
+      <ion-item class="item-invisible" no-lines>
+        <button ion-button round block type="submit" [disabled]="!todo.valid">Entrar</button>
+      </ion-item>
+
+      <!-- <ion-item class="item-invisible" no-lines (click)="showPswdRecovery()">
+        <p style="color: white;">¿Olvidasté tu contraseña?</p>
+
+      </ion-item> -->
+
+      <ion-item class="item-invisible" no-lines (click)="registroAsistente()">
+        <p style="color: white;">¿Eres nuevo? Registrate aquí</p>
+      </ion-item>
+
+
+
+    </ion-list>
+
+  </form>
+
+</ion-content>

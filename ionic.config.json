@@ -1,5 +1,7 @@
 {
   "name": "gmAsistentes",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

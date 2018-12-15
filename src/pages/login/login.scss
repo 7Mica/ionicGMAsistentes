@@ -1,0 +1,42 @@
+page-login {
+
+	.item-invisible{
+		background-color: transparent;
+
+	}
+
+
+	.titulo{
+		font-size: 200%; 
+		font-style: bold;
+		color: white;
+		text-align: center;
+	}
+
+	hr{
+		display: block;
+    	height: 1px;
+    	border: 0;
+    	border-top: 1px solid #ffffff;
+    	margin: 1em 0;
+    	padding: 0;
+
+	}
+
+	p{
+		color: green;
+		text-align: center;
+
+	}
+
+	
+
+	.myview{
+     background-image: url('../assets/imgs/login-background.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+	}
+
+
+
+}

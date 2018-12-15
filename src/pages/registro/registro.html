@@ -1,0 +1,71 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro de asistente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col col-12 align="center">
+      <h3> Código del evento </h3>
+      <h5> {{ evento }} </h5>
+    </ion-col>
+  </ion-row>
+
+  <form [formGroup]="registroForm" (ngSubmit)="registroFormSubmit()">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apellido Paterno</ion-label>
+        <ion-input formControlName="appaterno" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apellido Materno</ion-label>
+        <ion-input formControlName="apmaterno" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Confirmar Email</ion-label>
+        <ion-input formControlName="emailConfirm" type="text"></ion-input>
+      </ion-item>
+      <p *ngIf="registroForm.getError('notSame')" style="color: red;"> >_ Los correos deben coincidir</p>
+
+      <ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Confirmar Contraseña</ion-label>
+        <ion-input formControlName="passwordConfirm" type="password"></ion-input>
+      </ion-item>
+      <p *ngIf="registroForm.getError('notSamePassword')" style="color: red;"> >_ Las contraseñas deben coincidir</p>
+      <ion-item>
+        <button ion-button block type="submit" [disabled]="registroForm.invalid">Aceptar</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+</ion-content>

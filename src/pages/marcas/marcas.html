@@ -1,0 +1,44 @@
+<!--
+  Generated template for the MarcasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Marcas en el evento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="getMarcas($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngIf="marcas">
+
+    <ion-card *ngFor="let item of marcas">
+      <img src="{{ item.img }}" />
+      <ion-card-content>
+        <ion-card-title>
+          {{ item.titulo }}
+        </ion-card-title>
+        <p>
+          {{ item.ambito }}
+        </p>
+        <p>
+          Telefono: <b>{{ item.telefono }}</b>
+        </p>
+        <p>
+          Localidad: <b>{{ item.ciudad + ', ' + item.estado }}</b>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

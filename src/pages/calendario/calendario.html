@@ -1,0 +1,27 @@
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="getConferencias($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list *ngIf="conferencias">
+        <ion-card *ngFor="let item of conferencias">
+            <ion-card-content>
+                <ion-card-title>
+                    {{item.titulo}}
+                </ion-card-title>
+                <p *ngIf="item.ponente">
+                    {{item.ponente.fullName}}
+                </p>
+                <p>
+                    Hora de inicio: <b>{{item.hora}}</b>
+                </p>
+                <p>
+                    Fecha de presentación: <b>{{ item.fecha | date: 'dd/MM/yyyy'}}</b>
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+    </ion-list>
+
+
+</ion-content>

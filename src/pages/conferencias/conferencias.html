@@ -1,0 +1,61 @@
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="getConferencias($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list *ngIf="conferencias">
+
+        <ion-list-header><b>Conferencias para hoy </b></ion-list-header>
+
+        <ion-card *ngFor="let item of conferencias">
+            <img src="https://picsum.photos/g/200/50" />
+            <ion-card-content>
+                <ion-card-title>
+                    {{item.titulo}}
+                </ion-card-title>
+                <p *ngIf="item.ponente">
+                    {{item.ponente.fullName}}
+                </p>
+                <p>
+                    Hora de inicio: <b>{{item.hora}}</b>
+                </p>
+                <p>
+                    Fecha de presentación: <b>{{ item.fecha | date: 'dd/MM/yyyy'}}</b>
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+    </ion-list>
+
+    <ion-list *ngIf="conferenciasParaManana">
+
+        <br>
+        <ion-list-header><b>Conferencias para mañana</b></ion-list-header>
+
+        <ion-card *ngFor="let manana of conferenciasParaManana">
+            <img src="https://picsum.photos/g/200/50" />
+            <ion-card-content>
+                <ion-card-title>
+                    {{manana.titulo}}
+                </ion-card-title>
+                <p *ngIf="manana.ponente">
+                    {{manana.ponente.fullName}}
+                </p>
+                <p>
+                    Hora de inicio: <b>{{manana.hora}}</b>
+                </p>
+                <p>
+                    Fecha de presentación: <b>{{ manana.fecha | date: 'dd/MM/yyyy'}}</b>
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+
+    </ion-list>
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content padding>
+    <ion-list>
+        <button ion-item (click)="pushMarcas($event)">
+            <ion-icon name="analytics"></ion-icon>
+            Marcas
+        </button>
+
+        <button ion-item (click)="pushCroquis($event)">
+            <ion-icon name="expand"></ion-icon>
+            Croquis
+        </button>
+
+        <button ion-item (click)="pushInfoEvento($event)">
+            <ion-icon name="help-buoy"></ion-icon>
+            Información del evento
+        </button>
+
+        <!-- <button ion-item (click)="pushAyuda($event)">
+            <ion-icon name="at"></ion-icon>
+            Ayuda
+        </button> -->
+
+        <button ion-item (click)="pushContacto($event)">
+            <ion-icon name="information-circle"></ion-icon>
+
+            Contacto
+        </button>
+
+        <button ion-item (click)="cerrarSesion()">
+            <ion-icon name="close-circle"></ion-icon>
+
+            Cerrar Sesion
+        </button>
+
+    </ion-list>
+</ion-content>
