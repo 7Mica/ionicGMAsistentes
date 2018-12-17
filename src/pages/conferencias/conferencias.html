@@ -3,6 +3,7 @@
     <ion-refresher (ionRefresh)="getConferencias($event)">
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
+    
     <ion-list *ngIf="conferencias">
 
         <ion-list-header><b>Conferencias para hoy </b></ion-list-header>

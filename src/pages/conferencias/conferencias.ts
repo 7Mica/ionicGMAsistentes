@@ -3,8 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ApiRestProvider } from '../../providers/api-rest/api-rest';
 import { Storage } from '@ionic/storage';
 import { LoadingController } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
-
 
 @Component({
   selector: 'page-conferencias',
@@ -19,11 +17,7 @@ export class ConferenciasPage {
     public navParams: NavParams,
     private api: ApiRestProvider,
     private storage: Storage,
-    public loadingCtrl: LoadingController) {
-
-
-
-  }
+    public loadingCtrl: LoadingController) {  }
 
   ionViewDidLoad() {
     this.getConferencias();
@@ -54,7 +48,7 @@ export class ConferenciasPage {
       (res: any) => {
         this.conferencias = res.conferencias.filter(conferencia => {
 
-          if (new Date(conferencia.fecha).getDay() === new Date().getDay() &&
+          if (new Date(conferencia.fecha).getDate() === new Date().getDate() &&
             new Date(conferencia.fecha).getMonth() === new Date().getMonth() &&
             new Date(conferencia.fecha).getFullYear() === new Date().getFullYear()) {
 
@@ -64,7 +58,7 @@ export class ConferenciasPage {
 
         this.conferenciasParaManana = res.conferencias.filter(conferencia => {
 
-          if (new Date(conferencia.fecha).getDay() === new Date().getDay() + 1 &&
+          if (new Date(conferencia.fecha).getDate() === new Date().getDate() + 1 &&
             new Date(conferencia.fecha).getMonth() === new Date().getMonth() &&
             new Date(conferencia.fecha).getFullYear() === new Date().getFullYear()) {
 

@@ -32,7 +32,6 @@ export class LoginPage {
       password: new FormControl(null, [Validators.required])
     });
 
-    // this.evento = this.scanEventCode();
   }
 
   ionViewDidLoad() {
